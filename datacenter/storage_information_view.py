@@ -34,7 +34,7 @@ def is_visit_long(visit, minutes=60):
 
 
 def storage_information_view(request):
-    visits = Visit.objects.filter(leaved_at=None)
+    visits = Visit.objects.order_by("entered_at").filter(leaved_at=None)
     non_closed_visits = []
     for visit in visits:
         is_visit_long(visit, minutes=60)
