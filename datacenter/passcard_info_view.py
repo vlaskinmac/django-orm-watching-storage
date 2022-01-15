@@ -26,8 +26,7 @@ def is_visit_long(visit, minutes=60):
     if visit.leaved_at:
         duration_secs = visit.leaved_at - visit.entered_at
         _, duration = format_duration(duration_secs.seconds)
-        if duration < minutes:
-            return False
+        return not duration < minutes
 
 
 def passcard_info_view(request, passcode):
