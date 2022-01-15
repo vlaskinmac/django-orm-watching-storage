@@ -1,3 +1,4 @@
+
 def get_duration(visit):
     duration_secs = visit.leaved_at - visit.entered_at
     return duration_secs.seconds
