@@ -10,7 +10,6 @@ def passcard_info_view(request, passcode):
     visits = Visit.objects.filter(passcard__passcode=passcode)
     this_passcard_visits = []
     for visit in visits:
-        if visit.leaved_at:
             is_strange = is_visit_long(visit, minutes=60)
             if visit.entered_at:
                 duration_secs = get_duration(visit)
