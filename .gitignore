@@ -23,3 +23,5 @@ api_head_hunter_v1.py
 auth.py
 config.py
 *.env
+poetry.lock
+pyproject.toml
