@@ -36,7 +36,7 @@ def passcard_info_view(request, passcode):
     for visit in visits:
         if visit.leaved_at:
             is_strange = is_visit_long(visit, minutes=60)
-            if type(visit.entered_at) == datetime.datetime:
+            if visit.entered_at:
                 duration_secs = get_duration(visit)
                 duration_formated, _ = format_duration(duration_secs)
                 this_passcard_visits.append(
