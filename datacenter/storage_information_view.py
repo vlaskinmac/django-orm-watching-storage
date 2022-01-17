@@ -17,7 +17,7 @@ def storage_information_view(request):
     visits = Visit.objects.order_by("entered_at").filter(leaved_at=None)
     non_closed_visits = []
     for visit in visits:
-        duration_secs = get_duration_in_storage_now(visit.entered_at)
+        duration_secs = get_duration_who_in_storage_now(visit.entered_at)
         if duration_secs:
             duration_formated, _ = format_duration(duration_secs)
             non_closed_visits.append({
