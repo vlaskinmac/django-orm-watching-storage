@@ -3,9 +3,9 @@ from django.shortcuts import render
 
 
 def active_passcards_view(request):
-    is_active_passcards = Passcard.objects.filter(is_active=True)
+    active_passcards = Passcard.objects.filter(is_active=True)
 
     context = {
-        'active_passcards': is_active_passcards,  # люди с активными пропусками
+        'active_passcards': active_passcards,  # люди с активными пропусками
     }
     return render(request, 'active_passcards.html', context)
