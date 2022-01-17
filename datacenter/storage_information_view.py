@@ -17,7 +17,6 @@ def storage_information_view(request):
     visits = Visit.objects.order_by("entered_at").filter(leaved_at=None)
     non_closed_visits = []
     for visit in visits:
-        is_visit_long(visit, minutes=60)
         duration_secs = get_duration(visit.entered_at)
         if duration_secs:
             duration_formated, _ = format_duration(duration_secs)
