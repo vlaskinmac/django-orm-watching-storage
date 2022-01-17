@@ -11,9 +11,9 @@ def format_duration(duration):
     minutes, seconds = divmod(remainder_secs, 60)
     duration_min = duration // 60
     duration_formated = '{:02} часов {:02} минут {:02} секунд'.format(
-        hours,
-        minutes,
-        seconds,
+        round(hours),
+        round(minutes),
+        round(seconds),
     )
     return duration_formated, duration_min
 
