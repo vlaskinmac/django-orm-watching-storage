@@ -1,7 +1,7 @@
 
 def get_duration(visit):
     duration_secs = visit.leaved_at - visit.entered_at
-    return duration_secs.seconds
+    return duration_secs.total_seconds()
 
 
 def format_duration(duration):
@@ -19,5 +19,5 @@ def format_duration(duration):
 def is_visit_long(visit, minutes=60):
     if visit.leaved_at:
         duration_secs = visit.leaved_at - visit.entered_at
-        _, duration = format_duration(duration_secs.seconds)
+        _, duration = format_duration(duration_secs.total_seconds())
         return not duration < minutes
