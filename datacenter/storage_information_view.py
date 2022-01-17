@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.utils.timezone import localtime
 
 
-def get_duration_in_storage_now(visit):
+def get_duration_who_in_storage_now(visit):
     if visit:
         duration = localtime() - visit
         return duration.total_seconds()
