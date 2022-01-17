@@ -23,7 +23,6 @@ def is_visit_long(visit, minutes=60):
         duration_secs = visit.leaved_at - visit.entered_at
     else:
         leaved_at = datetime.datetime.now()
-        duration_secs = leaved_at - visit.entered_at
-
+        duration_secs = leaved_at - visit.entered_at.replace(tzinfo=None)
     _, duration = format_duration(duration_secs.total_seconds())
     return not duration < minutes
