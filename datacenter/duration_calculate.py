@@ -2,7 +2,11 @@ import datetime
 
 
 def get_duration(visit):
-    duration_secs = visit.leaved_at - visit.entered_at
+    if visit.leaved_at:
+        duration_secs = visit.leaved_at - visit.entered_at
+    else:
+        leaved_at = datetime.datetime.now()
+        duration_secs = leaved_at - visit.entered_at.replace(tzinfo=None)
     return duration_secs.total_seconds()
 
 
